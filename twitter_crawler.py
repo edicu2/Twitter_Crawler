@@ -3,11 +3,14 @@ import GetOldTweets3 as got
 from datetime import datetime, timedelta
 import time
 
-
+# GetOldTweet3 library 사용 
+# TweetCriteria 객체안에 Username 과 Emoji를 "unicode","ignore","name" 3가지 중 선택
 tweetCriteria = got.manager.TweetCriteria().setUsername("r5hyacftbPcFWXm")\
                                            .setEmoji("unicode")\
                                            .setMaxTweets(10)
+# Tweet 값을 list 형태로 받아온다.
 tweets = got.manager.TweetManager.getTweets(tweetCriteria)
+
 for n in range(0,len(tweets)):
     print("username :",tweets[n].username)
     print("text :",tweets[n].text)
@@ -24,7 +27,3 @@ for n in range(0,len(tweets)):
     print("img :",tweets[n].img)
     print(n)
     print(" ")
-
-
-# print(41 // 20 + (41 % 20 > 0))
-# print(41/21)
